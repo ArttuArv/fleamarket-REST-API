@@ -281,7 +281,7 @@ router.post( "/users/:userId/products", passport.authenticate( "jwt", { session:
 
         } catch ( err ) {
             // Jos post-jsonista puuttuu kenttiä
-            return res.status( 400 ).json( { message: "Fill the missing fields!" } );
+            return res.status( 400 ).json( { message: err.message } );
         }         
     } catch ( err ) {
         return res.status( 404 ).json( { message: "UserID not found!" } );
